@@ -1,0 +1,25 @@
+
+	//if(Math.pow(300-pixelR.x,2)+Math.pow(300-pixelR.y,2) < Math.pow(300-pixelA.x,2)+Math.pow(300-pixelA.y,2)) return;
+
+
+
+
+	//double incr = .9/Math.sqrt((pixelR.x-pixelA.x)*(pixelR.x-pixelA.x)+(pixelR.y-pixelA.y)*(pixelR.y-pixelA.y));
+
+	//for(double i = 0;i < 1;i += incr)
+			//if(Water.pixels[(int)(pixelA.x*i-pixelR.x*i+pixelR.x)+Water.WIDTH*(int)(pixelA.y*i-pixelR.y*i+pixelR.y)].owner == -2)
+				//return;
+				
+		
+	
+	
+	if(Math.atan2(pixelR.y-240,pixelR.x-320) < Math.atan2(pixelA.y-240,pixelA.x-320)) continue;//Rotating Phyics Modifier
+
+	
+	
+	if(pixelA.value + f(pixelA.value%Water.WIDTH) < pixelR.value + f(pixelR.value%Water.WIDTH)) continue;
+
+	private double f(int x)
+	{
+		return (Water.WIDTH/2-Math.abs((x-Water.WIDTH/2)))*5*Math.sin(x/8d+Water.frame/100d);
+	}
